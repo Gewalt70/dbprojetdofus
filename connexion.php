@@ -29,7 +29,8 @@
 
                 }
             } else {
-                echo"mauvaise addresse mail";
+                echo"mauvaise addresse 
+                mail";
             }
         }
     }
