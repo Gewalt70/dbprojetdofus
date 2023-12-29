@@ -1,6 +1,6 @@
 <?php
 include 'pdo.php';
-
+session_start();
 ?>
 
 <!doctype html>
@@ -8,18 +8,17 @@ include 'pdo.php';
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <script src="https://cdn.tailwindcss.com"></script> 
+  <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
 </head>
 
 <body>
-<script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
-
 <header class="text-gray-700 body-font border-b border-gray-200">
   <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
     <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" href="index.php">
       <img src="syscab.jpg" class="w-15 h-10 rounded-full" viewBox="0 0 24 24"></img>
     </a>
 
-    <span class="ml-3 text-xl">Bonjour '.$_SESSION['pseudo'].'</span>
+    <span class="ml-3 text-xl">Bonjour <?=$_SESSION['email'];?></span>
     <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
     
     <!-- if ($_SESSION['admin'] == 1) { //affichage dropdown admin 
