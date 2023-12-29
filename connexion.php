@@ -24,7 +24,7 @@
                     if($ligneverif['mdp'] != $ispasswordcorrect)    {
                         echo "mauvais mdp";
                     }else{
-                        header('Location:ez.php');
+                        header('Location:acceuil.php');
                     }
 
                 }
