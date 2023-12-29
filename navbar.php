@@ -1,6 +1,6 @@
 <?php
-include 'pdoexterne.php';
-$session = $_SESSION['pseudo'];
+include 'bdo.php';
+// $session = $_SESSION['pseudo'];
 ?>
 
 <!doctype html>
@@ -19,11 +19,11 @@ $session = $_SESSION['pseudo'];
       <img src="syscab.jpg" class="w-15 h-10 rounded-full" viewBox="0 0 24 24"></img>
     </a>
 
-    <?php echo'<span class="ml-3 text-xl">Bonjour '.$_SESSION['pseudo'].'</span>
-    <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">';
+    <span class="ml-3 text-xl">Bonjour '.$_SESSION['pseudo'].'</span>
+    <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
     
-    if ($_SESSION['admin'] == 1) { //affichage dropdown admin 
-      ?>
+    <!-- if ($_SESSION['admin'] == 1) { //affichage dropdown admin 
+      ?> -->
       <button id="dropdownDefault" class="inline-flex items-center mr-5 hover:text-gray-900 " data-dropdown-toggle="dropdown" type="button">Gestion<svg class="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
       <!-- Dropdown menu -->
       <div id="dropdown" class="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-600">
@@ -34,11 +34,11 @@ $session = $_SESSION['pseudo'];
               <li><a href="creerchantier.php" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Création chantiers</a></li>
           </ul>
       </div>
-    <?}?>
+    <!-- <?}?> -->
     <nav>
       <a href="mestickets.php" class="mr-5 hover:text-gray-900">Mes Tickets</a>
       <a href="meschantiers.php" class="mr-5 hover:text-gray-900">Mes Chantiers</a>
-      <?php if ($_SESSION['admin'] == 0) { echo' <a href="gestiontech.php" class="mr-5 hover:text-gray-900">Gestion</a>'; }?>
+      <?php //if ($_SESSION['admin'] == 0) { echo' <a href="gestiontech.php" class="mr-5 hover:text-gray-900">Gestion</a>'; }?>
       <a href="assignes.php" class="mr-5 hover:text-gray-900">Tickets en cours</a>
       <a href="autrestickets.php" class="mr-5 hover:text-gray-900">Tickets Non Assignés</a>
       <a href="compte.php" class="mr-5 hover:text-gray-900">Mon compte</a>
