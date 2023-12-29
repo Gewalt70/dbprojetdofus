@@ -1,6 +1,6 @@
 <?php
-include 'bdo.php';
-// $session = $_SESSION['pseudo'];
+include 'pdo.php';
+
 ?>
 
 <!doctype html>
@@ -42,8 +42,7 @@ include 'bdo.php';
       <a href="assignes.php" class="mr-5 hover:text-gray-900">Tickets en cours</a>
       <a href="autrestickets.php" class="mr-5 hover:text-gray-900">Tickets Non Assignés</a>
       <a href="compte.php" class="mr-5 hover:text-gray-900">Mon compte</a>
-      <!--<a href="savticket.php" class="mr-5 hover:text-gray-900">SAV Ticket</a>-->
-      <!--<a href="suivi.php" class="mr-5 hover:text-gray-900">Suivi ticket</a>-->
+
     </nav>
  
     <button onclick="window.location.href='logout.php'" class="inline-flex items-center bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0">Se déconnecter
