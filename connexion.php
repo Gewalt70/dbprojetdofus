@@ -1,6 +1,6 @@
 <?php
  include('pdo.php');
- 
+
  if (isset($_POST['submit'])) {
     /* Login status: false = not authenticated, true = authenticated. */
     $login = FALSE;
@@ -65,7 +65,7 @@
                     if($ligneverif['mdp'] != $ispasswordcorrect)    {
                         echo "mauvais mdp";
                     }else{
-                        header('Location:acceuil.php');
+                        //header('Location:acceuil.php');
                     }
 
                 }
