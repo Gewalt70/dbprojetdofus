@@ -33,16 +33,4 @@
     </div>
         </div>
     </body>
-    <!-- <body>
-        <section>
-            <h1>Connexion</h1>
-            <form action="connexion.php" method="POST">
-                <label>Adresse mail</label>
-                <input type="text" name="email">
-                <label>Mot de pase</label>
-                <input type="password" name="mdp">
-                <input type="submit" value="valider">
-            </form>
-        </section>
-    </body> -->
 </html>

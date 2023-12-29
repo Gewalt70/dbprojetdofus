@@ -24,13 +24,12 @@
                     if($ligneverif['mdp'] != $ispasswordcorrect)    {
                         echo "mauvais mdp";
                     }else{
-                        echo "vous etes connectez";
+                        header('Location:ez.php');
                     }
 
                 }
             } else {
-                echo"mauvaise addresse 
-                mail";
+                echo"mauvaise addresse mail";
             }
         }
     }
