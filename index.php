@@ -16,7 +16,7 @@
            <div class="flex justify-center w-full h-full my-auto xl:gap-14 lg:justify-normal md:gap-5 draggable">
       <div class="flex items-center justify-center w-full lg:p-12">
         <div class="flex items-center xl:p-10">
-          <form class="flex flex-col w-full h-full pb-6 text-center bg-white rounded-3xl" action="" method="POST">
+          <form class="flex flex-col w-full h-full pb-6 text-center bg-white rounded-3xl" action="connexion.php" method="POST">
             <h3 class="mb-3 text-4xl font-extrabold text-dark-grey-900">Connectez-vous</h3>
             <label for="email" class="mb-2 text-sm text-start text-grey-900">Email</label>
             <input id="email" type="email" placeholder="mail@dbprojetdofus.com" name="email" class="flex items-center w-full px-5 py-4 mr-2 text-sm font-medium outline-none focus:bg-grey-400 mb-7 placeholder:text-grey-700 bg-grey-200 text-dark-grey-900 rounded-2xl"/>
@@ -34,45 +34,3 @@
         </div>
     </body>
 </html>
-
-<?php
-    if (isset($_POST['submit'])) {
-      /* Login status: false = not authenticated, true = authenticated. */
-      $login = FALSE;
-
-      /* Username from the login form. */
-      $email = $_POST['email'];
-
-      /* Password from the login form. */
-      $password = $_POST['mdp'];
-      /* Execute the query */
-      try {
-      /* Look for the username in the database. */
-      $req=$pdo->prepare("SELECT * FROM utilisateurs WHERE email = :email");
-      $req->execute(array(':email' => $email));
-      
-      } catch (PDOException $e) {
-        /* Query error. */
-        echo 'Query error.';
-        die();
-      }
-
-      $row = $req->fetch(PDO::FETCH_ASSOC);
-
-      /* If there is a result, check if the password matches using password_verify(). */
-      if (is_array($row))
-      {
-        if (password_verify($password, $row['mdp']))
-        {
-          /* The password is correct. */
-          $login = TRUE;
-          //$_SESSION['id'] = $row['id'];
-          //$_SESSION['pseudo'] = $row['pseudo'];
-          $_SESSION['email'] = $row['email'];
-          //$_SESSION['admin'] = $row['admin'];
-
-          header('Location:session.php');
-        }
-      }
-    }
-?>
