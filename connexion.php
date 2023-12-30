@@ -14,19 +14,19 @@
         
         while ($ligne = $req->fetch()) {
             
-        if ($ligne != NULL) {
-            if (password_verify($mdp, $ligne['mdp'])) {
+            if ($ligne != NULL) {
+                if (password_verify($mdp, $ligne['mdp'])) {
 
-                $login = TRUE;
-                //$_SESSION['id'] = $ligne['id'];
-                //$_SESSION['pseudo'] = $ligne['pseudo'];
-                $_SESSION['email'] = $ligne['email'];
-                //$_SESSION['admin'] = $ligne['admin'];
-                header('Location:acceuil.php');
-            } else {
-                echo "Mot de passe incorrect";
+                    $login = TRUE;
+                    $_SESSION['pseudo'] = $ligne['pseudo'];
+                    $_SESSION['email'] = $ligne['email'];
+                    $_SESSION['admin'] = $ligne['admin'];
+
+                    header('Location:acceuil.php');
+                } else {
+                    echo "Mot de passe incorrect";
+                }
             }
-        }
     }  
 }
 ?>
