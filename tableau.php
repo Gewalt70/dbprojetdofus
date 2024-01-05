@@ -62,7 +62,7 @@
                   <td class="px-4 py-3 border">
                     <div class="flex items-center text-sm">
                       <div class="relative w-8 h-8 mr-3 rounded-full md:block">
-                        <img class="object-cover w-full h-full rounded-full" src="http://staticns.ankama.com/dofus/www/game/items/200/1230.png" alt="" loading="lazy" />
+                        <img class="object-cover w-full h-full rounded-full" referrerpolicy="no-referrer" src="http://staticns.ankama.com/dofus/www/game/items/200/<?=$ligne['id_image'];?>.png" alt="" loading="lazy" />
                         <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
                       </div>
                       <div>
