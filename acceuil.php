@@ -18,7 +18,7 @@
 </head>
 <body>
 
-<img src="http://staticns.ankama.com/dofus/www/game/items/200/1230.png"/>
+<img referrerpolicy="no-referrer" src="http://staticns.ankama.com/dofus/www/game/items/200/1230.png">
 
 <section class="text-gray-700 body-font">
   <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
