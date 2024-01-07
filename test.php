@@ -2,7 +2,7 @@
     include('pdo.php');
     include('navbar.php');
 
-    $json = file_get_contents('../projetdofus/json/amulet.json');
+    $json = file_get_contents('json/amulet.json');
     $parsedjson = json_decode($json, true); //decode le fichier JSON en array PHP 
   
     foreach ($parsedjson as $key => $value) { //prend chaque valeurs de l'array
