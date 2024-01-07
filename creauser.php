@@ -24,8 +24,6 @@
 </body> 
 </html>
 <?php
-
-
  include('pdo.php');
 
  //verif formulaire
@@ -34,7 +32,6 @@
    $hashpassword = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
 
    $email = $_POST['email'];
-   $mdp = $_POST['mdp'];
 
    $req=$pdo->prepare("SELECT COUNT(*) FROM utilisateurs WHERE email = :email");
    $req->execute(array(':email' => $email));
@@ -52,5 +49,4 @@
       }
     }
   }
-
 ?>
