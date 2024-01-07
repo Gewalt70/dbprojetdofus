@@ -1,13 +1,8 @@
-<?php
- include('pdo.php');
-?>
 <!doctype html>
 <html lang="fr">
   <head>
       <meta charset="utf-8">
       <title>Titre de la page</title>
-      <link rel="stylesheet" href="style.css">
-      <script src="script.js"></script>
   </head>
 
   <body>
@@ -24,6 +19,7 @@
       </form>
     </section>
 <?php
+<<<<<<< HEAD
  //verif formulaire
   if(isset($_POST['email']) && isset($_POST['mdp']) && isset($_POST['pseudo'])) {
     $hashpassword = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
@@ -48,4 +44,3 @@
 ?>
 </body>
 </html>
-
