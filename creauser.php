@@ -1,10 +1,6 @@
-<!doctype html>
-<html lang="fr">
-  <head>
-      <meta charset="utf-8">
-      <title>Titre de la page</title>
-  </head>
-
+<?php
+  include 'front/header.php';
+?>
   <body>
     <section>
       <h1>Création users</h1>
@@ -13,7 +9,7 @@
           <input type="text" name="email">
           <label>Pseudo</label>
           <input type="text" name="pseudo">
-	        <label>Mot de passe</label>
+	  <label>Mot de passe</label>
           <input type="password" name="mdp">
           <input type="submit" value="valider">
       </form>
@@ -42,7 +38,7 @@
       $insert->execute(array(':email' => $email, ':mdp' => $hashpassword, ':pseudo' => $pseudo));
       echo'<p>Pas de correspondance trouvé alors insert</p>';
     } else {
-      echo'<p>Correspondance trouvé alors retour acceuil</p>';
+      header('Location: index.php');
     }
   }
 ?>
