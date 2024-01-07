@@ -1,7 +1,5 @@
-<body>
-    <?php
-        session_start();
-        session_destroy();
-        header('Location: connexion.php');
-    ?>
-</body>
+<?php
+   include 'front/header.php';
+   session_destroy();
+   header('Location: index.php');
+?>
