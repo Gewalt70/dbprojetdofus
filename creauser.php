@@ -11,36 +11,36 @@
         <form action="creauser.php" method="POST">
           <label>Adresse mail</label>
           <input type="text" name="email">
-          <label>Mot de pase</label>
+          <label>Pseudo</label>
+          <input type="text" name="pseudo">
+	  <label>Mot de passe</label>
           <input type="password" name="mdp">
           <input type="submit" value="valider">
       </form>
     </section>
-</body> 
-</html>
 <?php
- include('pdo.php');
+<<<<<<< HEAD
  //verif formulaire
-  if(isset($_POST['email']) && isset($_POST['mdp'])) {
+  if(isset($_POST['email']) && isset($_POST['mdp']) && isset($_POST['pseudo'])) {
+    $hashpassword = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
 
-   $hashpassword = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
+    $email = $_POST['email'];
+    $mdp = $_POST['mdp'];
+    $pseudo = $_POST['pseudo'];
 
-   $email = $_POST['email'];
-
-   $req=$pdo->prepare("SELECT COUNT(*) FROM utilisateurs WHERE email = :email");
-   $req->execute(array(':email' => $email));
-
-    while($ligne = $req->fetch()) {
-
-      if($ligne[0] == 0) {
-    
-        $insert=$pdo->prepare("INSERT INTO utilisateurs (email, mdp) VALUES (:email, :mdp)");
-        $insert->execute(array(':email' => $email, ':mdp' => $hashpassword));
-
-        echo'Pas de correspondance trouvé alors insert';
-      } else {
-        echo'Correspondance trouvé alors retour acceuil';
-      }
+    $req=$pdo->prepare("SELECT COUNT(*) FROM utilisateurs WHERE email = :email");
+    $req->execute(array(':email' => $email));
+    $ligne = $req->fetch();
+    $count = $ligne[0];
+ 
+    if($count == 0) {
+      $insert=$pdo->prepare("INSERT INTO utilisateurs (email, mdp, pseudo, admin) VALUES (:email, :mdp, :pseudo, 0)");
+      $insert->execute(array(':email' => $email, ':mdp' => $hashpassword, ':pseudo' => $pseudo));
+      echo'<p>Pas de correspondance trouvé alors insert</p>';
+    } else {
+      echo'<p>Correspondance trouvé alors retour acceuil</p>';
     }
   }
 ?>
+</body>
+</html>
