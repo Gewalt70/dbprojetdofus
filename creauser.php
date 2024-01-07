@@ -20,6 +20,7 @@
     </section>
 <?php
  //verif formulaire
+	echo 'test';
   if(isset($_POST['email']) && isset($_POST['mdp']) && isset($_POST['pseudo'])) {
     $hashpassword = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
 
