@@ -31,5 +31,7 @@
 
             echo '<pre> L\'item '. $value['name'].' est déjà présent dans la table amulette </pre>';
         }
+    } else {
+        
     }
 ?>
