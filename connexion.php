@@ -1,4 +1,7 @@
 <?php
+    if (session_status() == 1) {
+	header('Location:acceuil.php');
+    }
     session_start();
     include('pdo.php');
 
