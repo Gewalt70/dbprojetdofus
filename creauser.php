@@ -38,8 +38,8 @@
  
     if($count == 0) {
       
-      $insert=$pdo->prepare("INSERT INTO utilisateurs (email, mdp, pseudo, admin) VALUES (:email, :mdp, :pseudo, :admin)");
-      $insert->execute(array(':email' => $email, ':mdp' => $hashpassword, ':pseudo' => $pseudo, ':admin' => 0));
+      $insert=$pdo->prepare("INSERT INTO utilisateurs (email, mdp, pseudo, admin) VALUES (:email, :mdp, :pseudo, 0)");
+      $insert->execute(array(':email' => $email, ':mdp' => $hashpassword, ':pseudo' => $pseudo));
       echo'<p>Pas de correspondance trouvé alors insert</p>';
     } else {
       echo'<p>Correspondance trouvé alors retour acceuil</p>';
