@@ -24,9 +24,7 @@
 </body> 
 </html>
 <?php
- session_start();
- session_destroy();
- session_start();
+
 
  include('pdo.php');
 
@@ -49,7 +47,7 @@
         $insert->execute(array(':email' => $email, ':mdp' => $hashpassword));
 
         echo'Pas de correspondance trouvé alors insert';
-       } else {
+      } else {
         echo'Correspondance trouvé alors retour acceuil';
       }
     }
