@@ -21,6 +21,7 @@
 <?php
  //verif formulaire
   if(isset($_POST['email']) && isset($_POST['mdp']) && isset($_POST['pseudo'])) {
+    echo 'testing email';
 
     var_dump($_POST['email']);
     
