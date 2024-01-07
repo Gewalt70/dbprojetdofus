@@ -19,16 +19,11 @@
       </form>
     </section>
 <?php
-<<<<<<< HEAD
- //verif formulaire
-  if(isset($_POST['email']) && isset($_POST['mdp']) && isset($_POST['pseudo'])) {
 
-=======
   //verif formulaire
 
   if(isset($_POST['email']) && isset($_POST['mdp']) && isset($_POST['pseudo'])) {
     
->>>>>>> a2e37cc3b1e874ed29417b29fe6db73081e0f9c9
     $hashpassword = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
 
     $email = $_POST['email'];
