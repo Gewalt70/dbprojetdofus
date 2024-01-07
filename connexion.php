@@ -1,8 +1,7 @@
 <?php
     include ('front/header.php');
-    if (session_status() === PHP_SESSION_ACTIVE) header('Location:acceuil.php');
-
-    if (session_status() === PHP_SESSION_NONE) session_start();
+    if(!isset($_SESSION['email']))  header('Location: index.php');
+    else header('Location: acceuil.php');
     include('pdo.php');
 
     if (isset($_POST['submit'])) {
@@ -24,7 +23,7 @@
                     $_SESSION['email'] = $ligne['email'];
                     $_SESSION['admin'] = $ligne['admin'];
 
-                    header('Location:acceuil.php');
+                    header('Location: acceuil.php');
                 } else {
                     echo "Mot de passe incorrect";
                 }

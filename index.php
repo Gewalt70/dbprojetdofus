@@ -1,17 +1,8 @@
 <?php
- if (session_status() === PHP_SESSION_ACTIVE) header('Location:acceuil.php');
+ include 'front/header.php';
+ if (isset($_SESSION['email'])) header('Location: acceuil.php');
  include('pdo.php');
 ?>
-<!doctype html>
-<html lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <title>DofayayoyeDB</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="script.js"></script>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/motion-tailwind.css" rel="stylesheet">
-    </head>
-
     <body class="bg-white rounded-lg py-5">    
         <div class="container flex flex-col mx-auto bg-white rounded-lg pt-12 my-5">
            <div class="flex justify-center w-full h-full my-auto xl:gap-14 lg:justify-normal md:gap-5 draggable">

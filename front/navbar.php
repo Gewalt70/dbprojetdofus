@@ -1,7 +1,7 @@
 <?php
 include '../pdo.php';
-if(session_status() === PHP_SESSION_NONE) session_start();
 include 'header.php';
+if(!isset($_SESSION['email'])) header('Location: '. $__DIR__ . 'index.php');
 ?>
 
 <body>
