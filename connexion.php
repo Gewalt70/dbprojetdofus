@@ -1,8 +1,7 @@
 <?php
-    if (session_status() == 1) {
-	header('Location:acceuil.php');
-    }
-    session_start();
+    if (session_status() == PHP_SESSION_ACTIVE)	header('Location:acceuil.php');
+
+    if(session_status() === PHP_SESSION_NONE) session_start();
     include('pdo.php');
 
     if (isset($_POST['submit'])) {
