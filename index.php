@@ -1,11 +1,14 @@
 <?php
+ if (session_status() == 2) {
+   header('Location:acceuil.php');
+ }
  include('pdo.php');
 ?>
 <!doctype html>
 <html lang="fr">
     <head>
         <meta charset="utf-8">
-        <title>Titre de la page</title>
+        <title>DofayayoyeDB</title>
         <link rel="stylesheet" href="style.css">
         <script src="script.js"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/motion-tailwind.css" rel="stylesheet">
