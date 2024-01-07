@@ -1,4 +1,5 @@
 <?php
+ var_dump($_POST);
  include('pdo.php');
 ?>
 <!doctype html>
@@ -21,16 +22,11 @@
           <input type="submit" value="valider">
       </form>
     </section>
-</body> 
-</html>
 <?php
-
-
  include('pdo.php');
 
  //verif formulaire
   if(isset($_POST['email']) && isset($_POST['mdp'])) {
-
    $hashpassword = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
 
    $email = $_POST['email'];
@@ -40,17 +36,19 @@
    $req->execute(array(':email' => $email));
 
     while($ligne = $req->fetch()) {
-
+      var_dump $ligne
       if($ligne[0] == 0) {
     
         $insert=$pdo->prepare("INSERT INTO utilisateurs (email, mdp) VALUES (:email, :mdp)");
         $insert->execute(array(':email' => $email, ':mdp' => $hashpassword));
 
-        echo'Pas de correspondance trouvé alors insert';
+        echo'<p>Pas de correspondance trouvé alors insert</p>';
       } else {
-        echo'Correspondance trouvé alors retour acceuil';
+        echo'<p>Correspondance trouvé alors retour acceuil</p>';
       }
     }
   }
-
 ?>
+</body>
+</html>
+
