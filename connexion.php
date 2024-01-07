@@ -1,13 +1,13 @@
 <?php
-    if (session_status() == PHP_SESSION_ACTIVE)	header('Location:acceuil.php');
+    include ('front/header.php');
+    if (session_status() === PHP_SESSION_ACTIVE) header('Location:acceuil.php');
 
-    if(session_status() === PHP_SESSION_NONE) session_start();
+    if (session_status() === PHP_SESSION_NONE) session_start();
     include('pdo.php');
 
     if (isset($_POST['submit'])) {
         
         $login = FALSE; // login status false = pas authentifié true = authentifié. 
-
         $email = $_POST['email']; 
         $mdp = $_POST['mdp'];
      

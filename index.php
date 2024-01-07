@@ -1,5 +1,5 @@
 <?php
- if (session_status() == PHP_SESSION_ACTIVE) header('Location:acceuil.php');
+ if (session_status() === PHP_SESSION_ACTIVE) header('Location:acceuil.php');
  include('pdo.php');
 ?>
 <!doctype html>

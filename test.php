@@ -1,6 +1,6 @@
 <?php
     include('pdo.php');
-    include('navbar.php');
+    include('front/navbar.php');
 
     $json = file_get_contents('json/amulet.json');
     $parsedjson = json_decode($json, true); //decode le fichier JSON en array PHP 

@@ -1,15 +1,8 @@
 <?php
-include 'pdo.php';
-session_start();
+include '../pdo.php';
+if(session_status() === PHP_SESSION_NONE) session_start();
+include 'header.php';
 ?>
-
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <script src="https://cdn.tailwindcss.com"></script> 
-  <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
-</head>
 
 <body>
 <header class="text-gray-700 body-font border-b border-gray-200">

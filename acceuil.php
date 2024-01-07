@@ -1,5 +1,5 @@
 <?php
-  include 'navbar.php';
+  include 'front/navbar.php';
   //Fonction pour connaitre le nbr de semaines
   function nbrSemaines()  {
     $today = date("Y-m-d"); 

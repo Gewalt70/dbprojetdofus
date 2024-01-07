@@ -1,5 +1,5 @@
 <?php
-  include 'navbar.php';
+  include 'front/navbar.php';
   include('pdo.php');
 
   $json = file_get_contents('../projetdofus/json/amulet.json');
