@@ -1,6 +1,3 @@
-<?php
- include('pdo.php');
-?>
 <!doctype html>
 <html lang="fr">
   <head>
@@ -25,7 +22,6 @@
 </html>
 <?php
  include('pdo.php');
-
  //verif formulaire
   if(isset($_POST['email']) && isset($_POST['mdp'])) {
 
