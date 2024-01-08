@@ -1,5 +1,5 @@
 <?php
-include '../pdo.php';
+include __DIR__ . '/../pdo.php';
 include 'header.php';
 if(!isset($_SESSION['email'])) header('Location: '. $__DIR__ . 'index.php');
 ?>

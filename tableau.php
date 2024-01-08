@@ -1,97 +1,68 @@
 <?php
-  include 'front/navbar.php';
-  include('pdo.php');
-
-  $json = file_get_contents('../projetdofus/json/amulet.json');
-  $parsedjson = json_decode($json, true);
-
-  //var_dump($parsedjson);
-
-  // foreach ($parsedjson as $key => $value) {
-    
-    // echo $value['name'];
-    // echo $value['level'];
-    // echo $value['type'];
-  // }
-  //$IMGitem = $parsedjson[0]->imgPath;
-
-  // var_dump($nomitem);
-  // var_dump($json);
-  //echo $IMGitem;
+  include ('front/navbar.php');
+  include ('front/header.php');
 ?>
-<!doctype html>
-<html lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <title>Titre de la page</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="script.js"></script>
-        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-    </head>
-
-    <body>   
-      <section class="container mx-auto p-6 font-mono">
-        <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
-          <div class="w-full overflow-x-auto">
-            <table class="w-full">
-              <thead>
-                <tr class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
-                  <th class="px-4 py-3">NOMS</th>
-                  <th class="px-4 py-3">ÉLÉMENTS</th>
-                  <th class="px-4 py-3">ACTION</th>
-                  <th class="px-4 py-3">LEVELS</th>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/riva-dashboard-tailwind/riva-dashboard.css">
+<div class = "h-screen overflow-hidden flex items-center justify-center" style="background: #edf2f7;">
+<div class="flex flex-wrap -mx-3 mb-5">
+  <div class="w-full max-w-full px-3 mb-6  mx-auto">
+    <div class="relative flex-[1_auto] flex flex-col break-words min-w-0 bg-clip-border rounded-[.95rem] bg-white m-5">
+      <div class="relative flex flex-col min-w-0 break-words border border-dashed bg-clip-border rounded-2xl border-stone-200 bg-light/30">
+        <!-- card body  -->
+        <div class="flex-auto block py-8 pt-6 px-9">
+          <div class="overflow-x-auto">
+            <table class="w-full my-0 align-middle text-dark border-neutral-200">
+              <thead class="align-bottom">
+                <tr class="font-semibold text-[0.95rem] text-secondary-dark">
+                  <th class="pb-3 text-start min-w-[175px]">ITEM</th>
+                  <th class="pb-3 text-end min-w-[200px]">ZONE</th>
+                  <th class="pb-3 text-end min-w-[100px]">LEVEL</th>
+                  <th class="pb-3 pr-12 text-end min-w-[50px]"></th>
+                  <!-- <th class="pb-3 pr-12 text-end min-w-[175px]">STATUS</th>
+                  <th class="pb-3 pr-12 text-end min-w-[100px]">DEADLINE</th> -->
+                  <th class="pb-3 text-end min-w-[50px]">AJOUTER AU CRAFT</th>
                 </tr>
               </thead>
-            </table>  
-          </div>
-        </div>
-      </section>
-      <?php  
-        $req=$pdo->prepare("SELECT * FROM armes");
-        $req->execute();
-        
-        while ($ligne = $req->fetch()) { 
-      ?>
-      <section class="container mx-auto">
-        <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
-          <div class="w-full overflow-x-auto">
-            <table class="w-full">
-
-              <tbody class="bg-white">
-                <tr class="text-gray-700">
-                  <td class="px-4 py-3 border">
-                    <div class="flex items-center text-sm">
-                      <div class="relative w-8 h-8 mr-3 rounded-full md:block">
-                        <img class="object-cover w-full h-full rounded-full" referrerpolicy="no-referrer" src="http://staticns.ankama.com/dofus/www/game/items/200/<?=$ligne['id_image'];?>.png" alt="" loading="lazy" />
-                        <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
+              <tbody>
+                <tr class="border-b border-dashed last:border-b-0">
+                  <td class="p-3 pl-0">
+                    <div class="flex items-center">
+                      <div class="relative inline-block shrink-0 rounded-2xl me-3">
+                        <img referrerpolicy="no-referrer" src="http://staticns.ankama.com/dofus/www/game/items/200/1230.png" class="w-[65px] h-[65px] inline-block shrink-0 rounded-2xl" alt="">
                       </div>
-                      <div>
-                        <p class="font-semibold text-black"><?= $ligne['nom'];?></p>
-                        <p class="text-xs text-gray-600"><?= $ligne['description'];?></p>
+                      <div class="flex flex-col justify-start">
+                        <a href="javascript:void(0)" class="mb-1 font-semibold transition-colors duration-200 ease-in-out text-lg/normal text-secondary-inverse hover:text-primary"> Amulette seculaire</a>
                       </div>
                     </div>
                   </td>
-                  <td class="px-4 py-3 text-ms font-semibold border">
-                    <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"> Agilité </span>
-                    <span class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-sm"> Intelligence </span>
-                    <span class="px-2 py-1 font-semibold leading-tight text-blue-700 bg-blue-100 rounded-sm"> Chance </span>
-                    <span class="px-2 py-1 font-semibold leading-tight text-amber-700 bg-amber-100 rounded-sm"> Force </span>
-                    <span class="px-2 py-1 font-semibold leading-tight text-amber-700 bg-amber-100 rounded-sm"> <?= $ligne['effets'];?> </span>
+                  <td class="p-3 pr-0 text-end">
+                    <span class="font-semibold text-light-inverse text-md/normal">Donjon Compte Harebourg</span>
                   </td>
-                  <td class="px-4 py-3 text-xs border">
-                    <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"> mettre boutons </span>
+                  <td class="p-3 pr-0 text-end">
+                    <span class="font-semibold text-light-inverse text-md/normal">200</span>
                   </td>
-                  <td class="px-4 py-3 text-xs border">
-                    <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"> <?= $ligne['lvl'];?></span>
+                  <td class="p-3 pr-12 text-end"></td>
+                  <!-- <td class="p-3 pr-12 text-end">
+                    <span class="text-center align-baseline inline-flex px-4 py-3 mr-auto items-center font-semibold text-[.95rem] leading-none text-primary bg-primary-light rounded-lg"> In Progress </span>
+                  </td> -->
+                  <!-- <td class="pr-0 text-start">
+                    <span class="font-semibold text-light-inverse text-md/normal">2023-08-23</span>
+                  </td> -->
+                  <td class="p-3 pr-0 text-end">
+                    <button class="ml-auto relative text-secondary-dark bg-light-dark hover:text-primary flex items-center h-[25px] w-[25px] text-base font-medium leading-normal text-center align-middle cursor-pointer rounded-2xl transition-colors duration-200 ease-in-out shadow-none border-0 justify-center">
+                      <span class="flex items-center justify-center p-0 m-0 leading-none shrink-0 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                        </svg>
+                      </span>
+                    </button>
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
-      </section>
-    </body>
-    <?php } ?>
-</html>
-
-<img src="http://staticns.ankama.com/dofus/www/game/items/200/1230.png"/><div class="overflow-x-auto">
+      </div>
+    </div>
+  </div>
+</div>
