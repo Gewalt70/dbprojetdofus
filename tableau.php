@@ -69,7 +69,7 @@
               }
             }
           ?>
-            <!-------- BOUTON ASSIGNÉ + AFFICHAGE --------><div id="refresh">
+            <!-------- BOUTON ASSIGNÉ + AFFICHAGE -------->
           <?php
             if(isset($_GET["amulette"])) {   
 
@@ -100,10 +100,5 @@
     </div>
   </div>
 </div>
-<script>
-  setTimeout(function(){
-    window.location.reload();
-  },30000);
-</script>
 </body>
 </html>
