@@ -1,68 +1,109 @@
 <?php
   include ('front/navbar.php');
-  include ('front/header.php');
 ?>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/riva-dashboard-tailwind/riva-dashboard.css">
-<div class = "h-screen overflow-hidden flex items-center justify-center" style="background: #edf2f7;">
-<div class="flex flex-wrap -mx-3 mb-5">
-  <div class="w-full max-w-full px-3 mb-6  mx-auto">
-    <div class="relative flex-[1_auto] flex flex-col break-words min-w-0 bg-clip-border rounded-[.95rem] bg-white m-5">
-      <div class="relative flex flex-col min-w-0 break-words border border-dashed bg-clip-border rounded-2xl border-stone-200 bg-light/30">
-        <!-- card body  -->
-        <div class="flex-auto block py-8 pt-6 px-9">
-          <div class="overflow-x-auto">
-            <table class="w-full my-0 align-middle text-dark border-neutral-200">
-              <thead class="align-bottom">
-                <tr class="font-semibold text-[0.95rem] text-secondary-dark">
-                  <th class="pb-3 text-start min-w-[175px]">ITEM</th>
-                  <th class="pb-3 text-end min-w-[200px]">ZONE</th>
-                  <th class="pb-3 text-end min-w-[100px]">LEVEL</th>
-                  <th class="pb-3 pr-12 text-end min-w-[50px]"></th>
-                  <!-- <th class="pb-3 pr-12 text-end min-w-[175px]">STATUS</th>
-                  <th class="pb-3 pr-12 text-end min-w-[100px]">DEADLINE</th> -->
-                  <th class="pb-3 text-end min-w-[50px]">AJOUTER AU CRAFT</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="border-b border-dashed last:border-b-0">
-                  <td class="p-3 pl-0">
-                    <div class="flex items-center">
-                      <div class="relative inline-block shrink-0 rounded-2xl me-3">
-                        <img referrerpolicy="no-referrer" src="http://staticns.ankama.com/dofus/www/game/items/200/1230.png" class="w-[65px] h-[65px] inline-block shrink-0 rounded-2xl" alt="">
-                      </div>
-                      <div class="flex flex-col justify-start">
-                        <a href="javascript:void(0)" class="mb-1 font-semibold transition-colors duration-200 ease-in-out text-lg/normal text-secondary-inverse hover:text-primary"> Amulette seculaire</a>
-                      </div>
+<!-------- BARRE DE RECHERCHE-------->
+<form action="" method="POST">
+  <div class="font-sans text-black bg-white flex items-left justify-left">
+    <div class="border rounded overflow-hidden flex">
+      <input type="text" name="rechercher" class="px-4 py-2" placeholder="Numéro de ticket, Raison Sociale..." style="width: 400px;">
+      <button class="flex items-center justify-center px-4 border-l">
+        <svg class="h-4 w-4 text-grey-dark" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"/><input type="submit"></svg>
+      </button>
+    </div>
+  </div>
+</form>
+
+<form>
+  <button type ="submit" name="amulette" class="ml-2 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Amulettes</button>
+  <button type ="submit" name=""        class="ml-2 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Ceintures</button>
+  <button type ="submit" name=""   class="ml-2 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Bottes</button>
+  <button type ="submit" name=""        class="ml-2 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"></button>
+  <button type ="submit" name=""     class="ml-2 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"></button>
+  <button type ="submit" name=""       class="ml-2 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"></button>
+  <button type ="submit" name=""        class="ml-2 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"></button>
+  <button type ="submit" name=""        class="ml-2 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"></button>
+  <button type ="submit" name=""          class="ml-2 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"></button>
+  <button type ="submit" name=""          class="ml-2 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"></button>
+</form>
+
+<!-------- TABLEAUX -------->
+<div class="flex flex-col">
+<!-- <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">-->
+  <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8"> 
+    <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+      <table class="min-w-full divide-y divide-gray-200">
+        <thead class="bg-gray-50">
+          <tr>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">nom</th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">zone</th>
+            
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">LEVEL</th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">AJOUT CRAFT</th>
+          </tr>
+        </thead>
+
+        <tbody class="bg-white divide-y divide-gray-200">
+          <!-------- RECHERCHE BDD BARRE DE RECHECHE + AFFICHAGE -------->
+          <?php
+            if(!empty($_POST['rechercher']))  {
+              
+              $rechercher = $_POST["rechercher"];
+              $requete=$pdo->prepare("SELECT * FROM `amulette` WHERE `nom` LIKE '%$rechercher%' OR `level` LIKE '%$rechercher%' ORDER BY 'level' DESC");
+              $requete->execute();
+          
+              while ($ligne = $requete->fetch()) {
+                echo'
+                <td class="whitespace-nowrap"><a class="text-indigo-600 hover:text-indigo-900" href="iteminfo?id='.$ligne['id'].'"target="_blank">
+                  <div class="flex items-center">
+                    <div class="ml-4">
+                      <div class="text-sm font-medium text-gray-900">'.$ligne['nom'].'</div>
                     </div>
+                  </div>
+                </td>
+                  <td class="whitespace-nowrap">
+                    <div class="text-sm text-gray-900">ZONE BETHEL</div>
                   </td>
-                  <td class="p-3 pr-0 text-end">
-                    <span class="font-semibold text-light-inverse text-md/normal">Donjon Compte Harebourg</span>
+                    <td class="px-6 py-4 whitespace-nowrap">'.$ligne['level'].'</td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">CRAFT + STUFF</td>
+                        </tr>';
+              }
+            }
+          ?>
+            <!-------- BOUTON ASSIGNÉ + AFFICHAGE --------><div id="refresh">
+          <?php
+            if(isset($_GET["amulette"])) {   
+
+              $req=$pdo->prepare('SELECT * FROM amulette order by `level` DESC');
+              $req->execute();
+              
+              while($ligne = $req->fetch()) {
+                echo'
+                <td class="whitespace-nowrap"><a class="text-indigo-600 hover:text-indigo-900" href="iteminfo?id='.$ligne['id'].'"target="_blank">
+                  <div class="flex items-center">
+                    <div class="ml-4">
+                      <div class="text-sm font-medium text-gray-900">'.$ligne['nom'].'</div>
+                    </div>
+                  </div>
+                </td>
+                  <td class="whitespace-nowrap">
+                    <div class="text-sm text-gray-900">ZONE BETHEL</div>
                   </td>
-                  <td class="p-3 pr-0 text-end">
-                    <span class="font-semibold text-light-inverse text-md/normal">200</span>
-                  </td>
-                  <td class="p-3 pr-12 text-end"></td>
-                  <!-- <td class="p-3 pr-12 text-end">
-                    <span class="text-center align-baseline inline-flex px-4 py-3 mr-auto items-center font-semibold text-[.95rem] leading-none text-primary bg-primary-light rounded-lg"> In Progress </span>
-                  </td> -->
-                  <!-- <td class="pr-0 text-start">
-                    <span class="font-semibold text-light-inverse text-md/normal">2023-08-23</span>
-                  </td> -->
-                  <td class="p-3 pr-0 text-end">
-                    <button class="ml-auto relative text-secondary-dark bg-light-dark hover:text-primary flex items-center h-[25px] w-[25px] text-base font-medium leading-normal text-center align-middle cursor-pointer rounded-2xl transition-colors duration-200 ease-in-out shadow-none border-0 justify-center">
-                      <span class="flex items-center justify-center p-0 m-0 leading-none shrink-0 ">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                        </svg>
-                      </span>
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
+                    <td class="px-6 py-4 whitespace-nowrap">'.$ligne['level'].'</td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">CRAFT + STUFF</td>
+                        </tr>';
+                        echo '<script type="text/javascript">location.reload(true);</script>';
+              }
+            }
+          ?>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
+<script>
+  setTimeout(function(){
+    window.location.reload();
+  },30000);
+</script>
+</body>
+</html>
