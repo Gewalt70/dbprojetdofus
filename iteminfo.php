@@ -14,7 +14,7 @@
                     <span>
                         <img referrerpolicy="no-referrer" src="https://www.dofusbook.net/assets/pv-mnIw6AUk.png">
                     </span>
-                        <p class="block font-sans text-base antialiased font-normal leading-relaxed text-inherit">351 à 300 Vitalité</p>
+                        <p class="block font-sans text-base antialiased font-normal leading-relaxed text-inherit">251 à 300 Vitalité</p>
                 </li>
                 <li class="flex items-center gap-4">
                     <span>
